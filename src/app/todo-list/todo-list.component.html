@@ -1,0 +1,17 @@
+<div class="list-container">
+  <div class="controls-container">
+    <ul class="pagination-controls">
+      <li>Amount:</li>
+      <li *ngFor="let option of displayOptions"><button (click)="changeSliceIndex(option)">{{option}}</button></li>
+    </ul>
+    <ul class="filter-controls">
+      <li>Filter:</li>
+      <li *ngFor="let option of filterOptions"><button (click)="changeFilter(option)">{{option}}</button></li>
+    </ul>
+  </div>
+  <div class="list-content-container">
+    <div *ngFor="let todo of displayList;let i=index">
+      <app-todo-card [task]="todo"></app-todo-card>
+      </div>
+  </div>
+</div>

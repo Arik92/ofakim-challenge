@@ -1,0 +1,16 @@
+<div class="card-container"> 
+  <div class="todo-details">
+    <div *ngIf="task.isNew" class="new">*NEW*</div>
+    <div class="id">ID: {{task.id}}</div>
+    <div class="completed">Status: 
+      <span *ngIf="task.completed; else pending" class="done">Done. Completed at {{task.completionDate | date: 'shortDate'}}</span>
+      <ng-template #pending><span class="pending">Pending</span></ng-template>
+      </div>
+      <br>
+    <div class="title">Description: {{task.title}}</div>    
+  </div>
+  <div class="button-container">
+    <button class="done" (click)="markAsDone()">Mark As done</button>
+    <button class="pending" (click)="markAsPending()">Mark As Pending</button>
+  </div>
+</div>
